@@ -1,0 +1,34 @@
+<div class="ui raised very padded text container segment">
+  <%= form_with model: @pet, class: 'ui form', local: true do |form| %>
+    <% if @pet.errors.any? %>
+      <div class="ui red message">
+        <div class="header">
+          <%= pluralize(@pet.errors.count, "error") %> prohibited
+          this article from being saved:
+        </div>
+        <ul>
+          <% @pet.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= form.label :name %><br>
+      <%= form.text_field :name, placeholder: 'Name' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :age %><br>
+      <%= form.text_field :age, placeholder: 'Age' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description %><br>
+      <%= form.text_area :description, placeholder: 'Description' %>
+    </div>
+
+    <%= form.submit class: 'ui button' %>
+    <%= link_to('Home', pets_path, class: 'ui button') %>
+  <% end %>
+</div>

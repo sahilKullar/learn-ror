@@ -1,0 +1,24 @@
+<header>
+  <h1>Pets#show</h1>
+  <p>Find me in app/views/pets/show.html.erb</p>
+  <br/>
+</header>
+<main>
+  <div class="ui raised very padded text container segment">
+    <div class="ui label">
+      Name
+      <div class="detail"><%= @pet.name %></div>
+    </div>
+    <div class="ui label">
+      Age
+      <div class="detail"><%= @pet.age %></div>
+    </div>
+    <div class="ui label">
+      Description
+      <div class="detail"><%= @pet.description %></div>
+    </div>
+    <br/>
+    <br/>
+    <%= link_to('Home', pets_path, class: 'ui button') %>
+  </div>
+</main>
